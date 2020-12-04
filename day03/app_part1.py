@@ -6,8 +6,8 @@ result = []
 index_x = 1
 start_x = 2
 start_y = 4
-increment_y = 3
 increment_x = 1
+increment_y = 3
 slope_x = start_x
 slope_y = start_y
 
@@ -20,7 +20,7 @@ for x in lines:
     for i in y:
         if index_x == slope_x and index_y == slope_y:
             if i == '#': # check if slope matches a tree
-                print(i, index_x, index_y, end = '\n')
+                #print(i, index_x, index_y, end = '\n')
                 trees += 1
             slope_x = slope_x + increment_x # going to next point
             slope_y = slope_y + increment_y
