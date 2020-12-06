@@ -13,3 +13,12 @@ https://adventofcode.com/2020
 [day 05](https://github.com/gfnord/advent2020/tree/main/day05) (Python)
 
 [day 06](https://github.com/gfnord/advent2020/tree/main/day06) (Python)
+
+
+Here are some friends repositories for the Advent of Code 2020 in other language:
+
+- F# -> https://github.com/mmoroni/AdventOfCode2020
+- Rust -> https://github.com/thiagomg/AoC-Rust
+- Node.js -> https://github.com/akctba/adventOfCode
+- F# -> https://github.com/bamorim/AdventOfCode2020
+- F# -> https://github.com/jilleJr/adventofcode-2020-fsharp
