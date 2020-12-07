@@ -13,3 +13,5 @@ https://adventofcode.com/2020
 [day 05](https://github.com/gfnord/advent2020/tree/main/day05) (Python)
 
 [day 06](https://github.com/gfnord/advent2020/tree/main/day06) (Python)
+
+[day 07](https://github.com/gfnord/advent2020/tree/main/day07) (Python)
