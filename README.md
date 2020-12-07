@@ -14,6 +14,8 @@ https://adventofcode.com/2020
 
 [day 06](https://github.com/gfnord/advent2020/tree/main/day06) (Python)
 
+[day 07](https://github.com/gfnord/advent2020/tree/main/day07) (Python)
+
 Here are some friends repositories for the Advent of Code 2020 in other language:
 
 - F# -> https://github.com/mmoroni/AdventOfCode2020
