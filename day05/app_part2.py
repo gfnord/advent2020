@@ -1,8 +1,7 @@
 def calc_myseatid():
-    f=open("input.txt","r")
-    seats=f.readlines()
-    f.close()
-    seatID = [] 
+    with open("input.txt") as f:
+        seats=f.readlines()
+    seatID = []
     for seat in seats:
         seat = seat.strip() # remove end of line
         seat_list = list(seat)
@@ -15,11 +14,9 @@ def calc_myseatid():
         #print(seat, seat_list)
         for i in range(0, 6):
             if seat_list[i] == 'F':
-                min_row = min_row
                 max_row = (((max_row-min_row+1)/2)-1)+min_row
                 #print(i, seat_list[i], min_row, max_row)
             if seat_list[i] == 'B':
-                max_row = max_row
                 min_row = ((max_row-min_row+1)/2)+min_row
                 #print(i, seat_list[i], min_row, max_row)
         if seat_list[6] == 'F':
@@ -30,12 +27,10 @@ def calc_myseatid():
             #print(6, seat_list[6], row)
         for i in range(7, 9):
             if seat_list[i] == 'L':
-                min_col = min_col
                 max_col = (((max_col-min_col+1)/2)-1)+min_col
                 #print(i, seat_list[i], min_col, max_col)
             if seat_list[i] == 'R':
                 min_col = ((max_col-min_col+1)/2)+min_col
-                max_col = max_col
                 #print(i, seat_list[i], min_col, max_col)
         if seat_list[9] == 'L':
             col = min_col
@@ -53,5 +48,5 @@ def calc_myseatid():
             if diff == 2:
                 print('My seat ID:', seatID[index]-1)
         index += 1
- 
+
 calc_myseatid()

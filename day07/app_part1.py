@@ -7,12 +7,12 @@ for x in lines:
     bag = bag.replace(' bags','')
     bags[bag] = contains
 
-def deeps(bag, bags):
-    contains = []
-    for b in bags:
-        if bag in bags[b]:
-            contains.append(b)
-            contains.extend(deeps(b, bags))
-    return set(contains) # use set to remove duplicates
+def deeps(fbag, fbags):
+    fcontains = []
+    for b in fbags:
+        if fbag in fbags[b]:
+            fcontains.append(b)
+            fcontains.extend(deeps(b, fbags))
+    return set(fcontains) # use set to remove duplicates
 
 print("bags: ", len(deeps('shiny gold', bags)))

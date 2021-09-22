@@ -4,10 +4,11 @@ def checkpassport():
     valid = 0
     required_fields = ['byr:', 'iyr:', 'eyr:', 'hgt:', 'hcl:', 'ecl:', 'pid:']
     valid_eye_colors = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
-    input = open('input.txt', 'r').read()
+    with open('input.txt') as f:
+        input1 = f.read()
     blank_line_regex = r"(?:\r?\n){2,}"
     all_pass = []
-    all_pass = re.split(blank_line_regex, input.strip())
+    all_pass = re.split(blank_line_regex, input1.strip())
     for passport in all_pass:
         passport = passport.replace('\n', ' ')
         passport = passport.split(' ')
@@ -41,7 +42,7 @@ def checkpassport():
                     if 59 <= int(field[1]) <= 76:
                         hgt_ok = 1
             if field[0] == 'hcl':
-                if len(field[1]) == 7: 
+                if len(field[1]) == 7:
                     char = []
                     char[:] = field[1]
                     if char[0] == '#':
@@ -57,7 +58,8 @@ def checkpassport():
                     pid_ok = 1
 
         # check all rules to check if it's valid
-        if count_fields == 7 and byr_ok == 1 and iyr_ok == 1 and eyr_ok == 1 and hgt_ok == 1 and hcl_ok == 1 and ecl_ok == 1 and pid_ok == 1:
+        if count_fields == 7 and byr_ok == 1 and iyr_ok == 1 and eyr_ok == 1\
+            and hgt_ok == 1 and hcl_ok == 1 and ecl_ok == 1 and pid_ok == 1:
             valid += 1
 
     print('Valid passports:', valid)

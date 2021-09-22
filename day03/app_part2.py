@@ -1,8 +1,6 @@
 def calc_slope(name, _start_x, _start_y, _increment_x, _increment_y):
-    f=open("input.txt","r")
-    lines=f.readlines()
-    result = []
-    f.close()
+    with open("input.txt") as f:
+        lines=f.readlines()
     slope_name = name
     trees = 0
     index_x = 1
@@ -12,7 +10,7 @@ def calc_slope(name, _start_x, _start_y, _increment_x, _increment_y):
     increment_y = _increment_y
     slope_x = start_x
     slope_y = start_y
-    
+
     #print('Slope name: ', slope_name)
     #print('start x:', start_x, 'start y:', start_y)
     #print('increment x:', increment_x, 'increment y:', increment_y)
@@ -21,7 +19,6 @@ def calc_slope(name, _start_x, _start_y, _increment_x, _increment_y):
         y = list(x)
         max_y = len(y)
         index_y = 1
-        pattern = int(float(index_x)/float(max_y+1))
         for i in y:
             if index_x == slope_x and index_y == slope_y:
                 if i == '#': # check if slope matches a tree

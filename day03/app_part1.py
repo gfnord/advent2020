@@ -1,7 +1,8 @@
 trees = 0
 
-f=open("input.txt","r")
-lines=f.readlines()
+with open("input.txt") as f:
+    lines=f.readlines()
+
 result = []
 index_x = 1
 start_x = 2
@@ -32,5 +33,3 @@ for x in lines:
     index_x += 1
 
 print('Trees: ', trees)
-
-f.close()

@@ -9,30 +9,31 @@ def run_part1():
         is_xmas = False # Assume is false, let's test
         for i in range(position-(preamble), position):
             for j in range(position-(preamble), position):
-                #print(position, numbers[position], numbers[i], numbers[j], int(numbers[i])+int(numbers[j]))
+                #print(position, numbers[position], numbers[i], numbers[j],\
+                      #int(numbers[i])+int(numbers[j]))
                 if (int(numbers[i])+int(numbers[j])) == int(numbers[position]) and i != j:
                     is_xmas = True
-        if is_xmas == False:
+        if is_xmas is False:
             #print("Not xmas:", numbers[position], position)
             target = int(numbers[position])
         position += 1
-    return(target)
+    return target
 
 
 def run_part2():
     position_i = 0
-    sum = 0
+    sum1 = 0
     results = []
     not_found = True
     target = run_part1()
     print('Target:', target)
-    while position_i < len(numbers) and sum < target and not_found:
-        sum = int(numbers[position_i])
+    while position_i < len(numbers) and sum1 < target and not_found:
+        sum1 = int(numbers[position_i])
         position_j = position_i+1
-        while position_j < len(numbers) and sum < target:
-            sum += int(numbers[position_j])
+        while position_j < len(numbers) and sum1 < target:
+            sum1 += int(numbers[position_j])
             #print(sum, position_i, position_j)
-            if sum == target:
+            if sum1 == target:
                 size = position_j - position_i + 1
                 for k in range(0, size):
                     results.append(int(numbers[position_i+k]))
@@ -40,7 +41,7 @@ def run_part2():
                 print('Answer:', max(results) + min(results))
                 not_found = False
             position_j += 1
-        sum = 0
+        sum1 = 0
         position_i += 1
 
 

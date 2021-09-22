@@ -8,7 +8,7 @@ for l in lines:
     bag, contains = l.split('contain')
     bag = bag.strip()
 
-    if 'no other' in contains: 
+    if 'no other' in contains:
         bags[bag] = {}
         continue
 
@@ -21,12 +21,12 @@ for l in lines:
     bags[bag] = contain_dict
 
 
-def Count(bag, bags): # recursive count function
+def Count(fbag, fbags): # recursive count function
     count = 1  # Count the bag itself
-    contained_bags = bags[bag]
-    for c in contained_bags:
-        multiplier = contained_bags[c]
-        count += multiplier * Count(c, bags)
+    contained_bags = fbags[fbag]
+    for fc in contained_bags:
+        multiplier = contained_bags[fc]
+        count += multiplier * Count(fc, fbags)
     return count
 
 

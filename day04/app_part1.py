@@ -3,10 +3,11 @@ import re
 def checkpassport():
     valid = 0
     required_fields = ['byr:', 'iyr:', 'eyr:', 'hgt:', 'hcl:', 'ecl:', 'pid:']
-    input = open('input.txt', 'r').read()
+    with open('input.txt') as f:
+        input1 = f.read()
     blank_line_regex = r"(?:\r?\n){2,}"
     all_pass = []
-    all_pass = re.split(blank_line_regex, input.strip())
+    all_pass = re.split(blank_line_regex, input1.strip())
     for passport in all_pass:
         passport = passport.replace('\n', ' ')
         passport = passport.split(' ')

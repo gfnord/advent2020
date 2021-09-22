@@ -1,8 +1,9 @@
 okay=0
 failed=0
 
-f=open("input.txt","r")
-lines=f.readlines()
+with open("input.txt") as f:
+    lines=f.readlines()
+
 result = []
 for x in lines:
     x = x.strip() # remove end of line
@@ -40,9 +41,3 @@ for x in lines:
 
 print('Okay: ', okay)
 print('Failed: ', failed)
-
-f.close()
-
-#for i in result:
-#    for j in i:
-#        print(j, end = ' ')

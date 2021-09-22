@@ -9,9 +9,10 @@ while position < len(numbers) and is_xmas:
     is_xmas = False # Assume is false, let's test
     for i in range(position-(preamble), position):
         for j in range(position-(preamble), position):
-            #print(position, numbers[position], numbers[i], numbers[j], int(numbers[i])+int(numbers[j]))
+            #print(position, numbers[position], numbers[i], numbers[j],\
+                  #int(numbers[i])+int(numbers[j]))
             if (int(numbers[i])+int(numbers[j])) == int(numbers[position]) and i != j:
                 is_xmas = True
-    if is_xmas == False:
+    if is_xmas is False:
         print("Not xmas:", numbers[position], position)
     position += 1
